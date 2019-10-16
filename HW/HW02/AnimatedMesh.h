@@ -16,7 +16,8 @@
 
 PXR_NAMESPACE_USING_DIRECTIVE
 
-template<class T, int d> // d is the dimension of the mesh elements, e.g. 3 for triangles, 4 for quads
+// seems that dimension is only used to initialize array, which is not exactly needed
+template<class T, int dimension> // d is the dimension of the mesh elements, e.g. 3 for triangles, 4 for quads
 struct AnimatedMesh
 {
     using Vector2 = Eigen::Matrix< T , 2 , 1>;
@@ -29,7 +30,7 @@ struct AnimatedMesh
     GfRange3f m_extent;
     int m_lastFrame;
     
-    std::vector<std::array<int, d>> m_meshElements;
+    std::vector<std::array<int, dimension>> m_meshElements;
     std::vector<Vector2> m_particleX;
 
     AnimatedMesh()

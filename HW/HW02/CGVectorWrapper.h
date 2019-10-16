@@ -1,3 +1,4 @@
+#pragma once
 template<class AttributeType> // AttributeType is the type of each particle's property,
                               // e.g., Eigen::Vector2f for typical positions/velocities
 struct CGVectorWrapper
@@ -13,6 +14,7 @@ struct CGVectorWrapper
 
     CGVectorWrapper& operator = (const CGVectorWrapper& v)
     {
+        // TODO: check whether the same?
         m_data = v.m_data;
         return *this;
     }

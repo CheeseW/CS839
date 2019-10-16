@@ -1,3 +1,4 @@
+#pragma once
 template<class AttributeType, // AttributeType is the type of each particle's property,
                               // e.g., Eigen::Vector2f for typical positions/velocities
          class FEMType>       // FEMType is the class that defines forces (e.g. FiniteElementMesh)
